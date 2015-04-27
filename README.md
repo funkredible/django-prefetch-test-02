@@ -6,9 +6,13 @@ granpa.htmlで子テーブルにアクセスしている。
 index1、index2それぞれのSQLの発行のされ方が異なる。
 index2ではgranpa.htmlで子テーブルアクセス時にSQLが発行される。
 
-子テーブルをprefetchする場合の記述はデフォルトでは以下
-Granpa.objects.all().prefetch_related('papa_set')
+Modelクラスの外部キーにrelated_nameを使うことで任意のプロパティ名を使用可能（models.py、granpa.htmlを参照）。
+
+子テーブルをprefetchする場合の記述。
+（デフォルト）Granpa.objects.all().prefetch_related('papa_set')
+（設定後）Granpa.objects.all().prefetch_related('papas')
 
 子テーブルのさらに子テーブル
-Granpa.objects.all().prefetch_related('papa_set__child_set')
+（デフォルト）Granpa.objects.all().prefetch_related('papa_set__child_set')
+（設定後）Granpa.objects.all().prefetch_related('papas__children')
 
