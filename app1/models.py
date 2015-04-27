@@ -11,7 +11,7 @@ class Granpa(models.Model):
 
 
 class Papa(models.Model):
-    granpa = models.ForeignKey(Granpa)
+    granpa = models.ForeignKey(Granpa, related_name='papas')
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Papa(models.Model):
 
 
 class Child(models.Model):
-    papa = models.ForeignKey(Papa)
+    papa = models.ForeignKey(Papa, related_name='children')
     name = models.CharField(max_length=255)
 
     def __str__(self):

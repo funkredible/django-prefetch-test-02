@@ -7,7 +7,7 @@ from .models import Granpa
 # prefetch
 def index1(request):
 
-    granpa_list = Granpa.objects.all().prefetch_related('papa_set__child_set')
+    granpa_list = Granpa.objects.all().prefetch_related('papas__children')
 
     return render(request, 'granpa.html', {'granpa_list': granpa_list})
 

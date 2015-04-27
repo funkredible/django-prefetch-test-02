@@ -2,9 +2,9 @@
 <body>
 {% for granpa in granpa_list %}
     <h1>{{ granpa.name }}</h1>
-    {% for papa in granpa.papa_set.all %}
+    {% for papa in granpa.papas.all %}
         <h2>{{ papa.name }}</h2>
-        {% for child in papa.child_set.all %}
+        {% for child in papa.children.all %}
             <h3>{{ child.name }}</h3>
         {% endfor %}
     {% endfor %}
