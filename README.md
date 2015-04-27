@@ -10,9 +10,11 @@ Modelクラスの外部キーにrelated_nameを使うことで任意のプロパ
 
 ## 子テーブルをprefetchする場合の記述。
 （デフォルト）Granpa.objects.all().prefetch_related('papa_set')
+
 （設定後）Granpa.objects.all().prefetch_related('papas')
 
 ## 子テーブルのさらに子テーブル
 （デフォルト）Granpa.objects.all().prefetch_related('papa_set__child_set')
+
 （設定後）Granpa.objects.all().prefetch_related('papas__children')
 
